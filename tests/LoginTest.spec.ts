@@ -1,10 +1,7 @@
-import {test} from '@playwright/test'
-import { LoginPage } from '../pages/LoginPage'
+import {test} from '../fixtures/pom-fixtures'
 
-test("Login", async({page})=> {
-    const loginpage = new LoginPage(page);
-
-    await loginpage.openOrangeCRM();
-    await loginpage.login("Admin", "admin123")
+test("Login", async({page, loginPage})=> {
+    await loginPage.openOrangeCRM();
+    await loginPage.login("Admin", "admin123")
     
 })
